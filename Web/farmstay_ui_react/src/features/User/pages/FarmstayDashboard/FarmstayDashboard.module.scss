@@ -1,0 +1,66 @@
+.wrapper {
+    width: 100%;
+
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    // background: #fcfcfc9f;
+    padding: 12px;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-weight: 700;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.box {
+    padding: 8px;
+}
+
+.box-container {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.header-box {
+    display: flex;
+}
+
+.header-history {
+    padding: 0 8px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.header-title {
+    text-align: center;
+    flex: 1;
+}
+
+.body-box {
+    padding: 26px;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 222px;
+    height: 222px;
+}
+
+.wrapper-farmstay {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 8px;
+}

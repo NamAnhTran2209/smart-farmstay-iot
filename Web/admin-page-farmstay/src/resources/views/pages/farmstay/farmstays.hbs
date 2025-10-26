@@ -1,0 +1,101 @@
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 col-sm-12 col-lg-4 text-primary text-center p-0 d-flex align-items-center">
+            <h5 class="mr-2">Danh sách Farmstay</h5>
+            <a href="/farmstay/create" class="btn btn-primary btn-sm mr-2">
+            <i class="fa fa-plus-circle"></i> Thêm farmstay
+            </a>
+
+            <a href = "/farmstay/trash" class="btn btn-dark btn-sm position-relative mr-2">
+                <i class="fas fa-trash"></i>
+                <p class="badge badge-warning position-absolute" style="top: -4px;right: -4px;">{{total_farmstay_deleted}}</p>
+            </a>
+            
+        </div>
+        <div class="col-lg-12 wrap-table p-3 mt-2">
+            <table id="tableDynamicVerticalScroll" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th class="th-sm">Action</th>
+                        <th class="th-sm">STT</th>
+                        <th class="th-sm">Tên</th>
+                        <th class="th-sm">Người quản lý</th>
+                        <th class="th-sm">Giá thuê</th>
+                        <th class="th-sm">Trạng thái</th>
+                        <th class="th-sm">Thời gian cập nhật</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each farmstays}}
+                        <tr>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <a href="/farmstay/edit/{{this.id}}" class="btn btn-sm btn-primary  mr-1"><i class="fa fa-pencil-alt"></i></a>
+                                    
+                                <span data-name="{{this.name}}" data-id="{{this.id}}" class="btn btn-sm btn-warning delete-farmstay ml-1" data-toggle="modal" data-target="#modalDeleteFarmstay">
+                                <i class="fas fa-trash"></i></span>
+                                </div>
+                                
+                                
+                            </td>
+                            <td class="text-center">{{sum @index 1}}</td>
+                            <td>{{this.name}}</td>
+                            {{#if this.management_staff}}
+                                <td>{{this.management_staff.name}}</td>
+                            {{else}}
+                                <td>Chưa có</td>
+                            {{/if}}
+                            <td><p class="text-dark d-inline money-vnd">{{this.rent_cost_per_day}}</p></td>
+                            <td class="d-flex justify-content-center"><a href="#" class="btn btn-sm btn-success"><i class="fas fa-check-circle"></i></a></td>
+                            <td>{{prettifyDate this.updatedAt}}</td>
+                            
+                        </tr>
+                    
+                    {{/each}}
+                    
+                </tbody>
+                
+            </table>
+        </div>
+
+        <div class="modal fade" id="modalDeleteFarmstay" tabindex="-1" role="dialog" aria-labelledby="modalDeleteFarmstay" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteFarmstayLabel">Bạn có muốn xóa?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning modal-title-warning" role="alert">
+                            Bạn có muốn xóa <a class="alert-link"></a> không?
+                        </div>
+                        <form id="formDeleteFarmstay" method="POST"></form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnDeleteFarmstay"type="button" class="btn btn-warning">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{> js}}
+<script src="/js/farmstay/manager_farmstay.js">
+</script>
+<script>
+    $(document).ready(function () {
+        var table = $('#tableDynamicVerticalScroll').DataTable({
+            "scrollY": "50vh",
+            "scrollCollapse": true,
+        });
+       
+    });
+</script>
+
+

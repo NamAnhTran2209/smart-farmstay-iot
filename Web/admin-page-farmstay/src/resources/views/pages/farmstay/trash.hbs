@@ -1,0 +1,137 @@
+<div class="container">
+        <div class="row mt-4">
+            <div class="col-md-6 col-sm-12 col-lg-6 text-primary p-0 d-flex align-items-center">
+                <h5 class=" mr-2">Danh sách farmstay đã xóa</h5>
+                <a href="/farmstay" class="btn btn-dark btn-sm">
+                <i class="fas fa-chevron-circle-left"></i>
+                <span>Quay lại danh sách</span> 
+                </a>
+                
+            </div>
+        <div class="col-lg-12 wrap-table p-3 mt-2">
+            <table id="tableDynamicVerticalScroll" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th class="th-sm">Action</th>
+                        <th class="th-sm">STT</th>
+                        <th class="th-sm">Tên</th>
+                        <th class="th-sm">Người quản lý</th>
+                        <th class="th-sm">Giá thuê</th>
+                        <th class="th-sm">Thời gian xóa</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{#each farmstays}}
+                        <tr>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <span 
+                                        data-id="{{this.id}}",
+                                        class="btn btn-sm btn-primary restore-farmstay mr-1">
+                                        <i class="fas fa-undo"></i>
+                                    </span>
+                                    
+                                    <span data-name="{{this.name}}" data-id="{{this.id}}" class="btn btn-sm btn-danger delete-force-farmstay ml-1" data-toggle="modal" data-target="#modalDeleteForceFarmstay">
+                                    <i class="fas fa-times-circle"></i></span>
+                                </div>
+                                
+                                
+                            </td>
+                            
+                            <td class="text-center">{{sum @index 1}}</td>
+                            <td>{{this.name}}</td>
+                            {{#if this.management_staff}}
+                                <td>{{this.management_staff.name}}</td>
+                            {{else}}
+                                <td>Chưa có</td>
+                            {{/if}}
+                            <td class="money-vnd">{{this.rent_cost_per_day}}</td>
+                            <td>{{prettifyDate this.deletedAt}}</td>
+                            
+                        </tr>
+                    {{/each}}
+                </tbody>
+                
+            </table>
+        </div>
+        
+        <form id="formRestoreFarmstay" class="sr-only" action="/farmstay/trash?_method=PUT" method="POST">
+            <input class="sr-only" id="inputIdRestoreFarmstay" name="id" type="text">
+        </form>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalDeleteForceFarmstay" tabindex="-1" role="dialog" aria-labelledby="modalDeleteForceFarmstayLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteForceFarmstayLabel">Thông báo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger modal-title-danger" role="alert">
+                            Bạn có muốn xóa <a class="alert-link"></a> vĩnh viễn không?
+                        </div>
+                        <form id="formDeleteForceFarmstay" method="POST"></form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnDeleteForceFarmstay"type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> js}}
+<script>
+
+    $( document ).ready(function(){
+        var table = $('#tableDynamicVerticalScroll').DataTable({
+            "scrollY": "50vh",
+            "scrollCollapse": true,
+        });
+        (function($){
+            $('.restore-farmstay').click(function(){
+                const id  = this.getAttribute("data-id");
+                $('#inputIdRestoreFarmstay').val(id)
+                $('#formRestoreFarmstay').submit();
+            })
+         })(jQuery);
+
+
+        (function($){
+            $('#btnDeleteForceFarmstay').on('click', function (e) {
+                const id = e.target.getAttribute('data-id-delete')
+                $('#formDeleteForceFarmstay').attr('action', `/farmstay/trash?_method=DELETE&farmstay_id=${id}`);
+                $('#formDeleteForceFarmstay').submit();
+                
+            })
+         })(jQuery);
+
+        (function($){
+            $('#modalDeleteForceFarmstay').on('show.bs.modal', function (e){
+                var button = $(e.relatedTarget) // Button that triggered the modal
+                let id = button.data('id')
+                $('#btnDeleteForceFarmstay').attr('data-id-delete', id);
+                
+            });
+        })(jQuery);
+
+        (function($){
+            $('.delete-force-farmstay').click(function(){  
+                let name = this.getAttribute("data-name");
+                
+                //$('#modalDeleteEquipment').modal('show');
+                $('.modal-title-danger .alert-link').text(name)
+            });
+        })(jQuery);
+    });
+
+        
+</script>

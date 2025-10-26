@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "extension": [
+                    ".jsx",
+                    ".js",
+                    ".json"
+                    
+                ],
+                "alias": {
+                    "~": "./src"
+                }
+            }
+        ]
+    ]
+}

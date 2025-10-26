@@ -1,0 +1,141 @@
+<resources>
+    <string name="app_name" translatable="false">FarmstayACN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string-array name="gender">
+        <item>@string/male</item>
+        <item>@string/female</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string-array name="language">
+        <item>English</item>
+        <item>Vietnamese</item>
+    </string-array>
+
+    <string name="change">CHANGE</string>
+    <string name="forgot">FORGOT</string>
+    <string name="password">PASSWORD</string>
+
+    <string name="curentPass">current password</string>
+    <string name="newPass">new password</string>
+    <string name="comfirmPass">comfirm password</string>
+
+    <string name="contactUs">Contact us</string>
+    <string name="phoneNumber">Phone</string>
+    <string name="emailAddress">Email</string>
+    <string name="askYourQuery">Ask Your Query</string>
+
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="account">Account</string>
+
+    <string name="emailOrusername">Username/Email</string>
+    <string name="username">Username</string>
+    <string name="gender">Gender</string>
+    <string name="address">Address</string>
+    <string name="birthday">Birthday</string>
+    <string name="save">Save</string>
+
+    <string name="forgotMessege">provide your account email address if you want to reset your password</string>
+    <string name="send">SEND</string>
+
+    <string name="logIn">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="rememberMe">Remember me</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="createAnAccount">Create an account</string>
+    <string name="password2">Password</string>
+    <string name="alreadyhaveanAccount">Already have an account</string>
+    <string name="LogIntoaccount">Log In to account</string>
+
+    <string name="passwordmustbe6characters">Password must be 6 characters</string>
+    <string name="passwordnotmatch">Password not match</string>
+    <string name="invalidEmail">Invalid email</string>
+
+    <string name="setting">Setting</string>
+    <string name="changePass">Change Password</string>
+    <string name="language1">Language</string>
+
+    <string name="verification">VERIFICATION</string>
+    <string name="code">CODE</string>
+    <string name="verificationMessege">enter the verification code that was sent to your email</string>
+    <string name="verifyCode">Verify code</string>
+    <string name="reset">RESET</string>
+    <string name="resetMessege">Code has been successfully verified Set your new password</string>
+
+    <string name="user">( User )</string>
+    <string name="contact">Contact</string>
+    <string name="edit">Edit</string>
+    <string name="logout">Log Out</string>
+
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="soilMoisture">Soil Moisture</string>
+    <string name="soilIsNormal">soil moisture is normal</string>
+    <string name="lowSoil">low soil moisture</string>
+    <string name="waterLevel">Water Level</string>
+    <string name="waterIsNormal">water level is normal</string>
+    <string name="lowWater">low water level</string>
+    <string name="highWater">high water level</string>
+    <string name="value">Value:</string>
+
+    <string name="home1">Home</string>
+    <string name="farm">Farm</string>
+
+    <string name="hi">Hi, </string>
+    <string name="welcomeToFarmstayACN">Welcome To Farmstay ACN</string>
+    <string name="introducing">Introducing some farmstay areas at Farmstay ACN</string>
+
+    <string name="listofDevice">List of devices</string>
+    <string name="lamp1">Lamp 1</string>
+    <string name="lamp2">Lamp 2</string>
+    <string name="lamp3">Lamp 3</string>
+    <string name="lampOff">Lamp OFF</string>
+    <string name="lampOn">Lamp ON</string>
+    <string name="warning">WARNING</string>
+
+    <string name="delete">Delete</string>
+    <string name="warning2">Warning</string>
+    <string name="fireAlarm">Fire alarm in your farmstay area</string>
+
+    <string name="loginSuccessfully">Log in successfully</string>
+    <string name="wrongPassword">Wrong password</string>
+    <string name="accountDoesnotExist">Account does not exist</string>
+    <string name="passwordLenght">Password length must be from 3 characters</string>
+    <string name="signupSuccessfully">Sign up successfully</string>
+    <string name="canNotCreateAccount">Can not create an account</string>
+
+    <string name="loginAgain">Login session has expired, please login again</string>
+    <string name="sureLogout">Are you sure you want to log out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+
+    <string name="change_avatar">Change avatar</string>
+    <string name="choseImageLibary">Image libary</string>
+    <string name="choseCamera">Camera</string>
+    <string name="cancel">Cancel</string>
+    
+    <string name="youNotRentedFarmstay">you have not rented farmstay. Please rent in the homepage area or contact us directly.</string>
+
+    <string name="website">Website</string>
+    <string name="status">Status</string>
+    <string name="unverified">Unverified account</string>
+    <string name="verified">Verified account</string>
+    <string name="verify">Verify</string>
+    <string name="accountVerification">ACCOUNT VERIFICATION</string>
+    <string name="changePassSuccess">Change password successfully</string>
+    <string name="curentPassIncorect">Current password is incorrect</string>
+    <string name="emailNotRegister">Email not registered account</string>
+    <string name="codeSendSuccess">Code sent successfully</string>
+    <string name="incorectOtpCode">incorrect otp code</string>
+    <string name="otpVerifySuccess">otp verification successful</string>
+    <string name="resetPassSuccess">password reset successful</string>
+    <string name="fan">Fan</string>
+
+</resources>

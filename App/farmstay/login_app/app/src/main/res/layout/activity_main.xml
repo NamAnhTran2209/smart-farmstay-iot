@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".auth.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="35dp"
+                android:text="@string/signup"
+                android:textColor="@color/farmstay"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="@string/username"
+                    android:inputType="text"
+                    android:padding="16dp"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableStart="@drawable/ic_mail"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="@string/emailAddress"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvErrorEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#D51C1C"
+                    android:layout_marginStart="15dp"/>
+
+                <EditText
+                    android:id="@+id/password_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawableEnd="@drawable/ic_visibility_off"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="@string/password2"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvErrorPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#D51C1C"
+                    android:layout_marginStart="15dp"/>
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawableEnd="@drawable/ic_visibility_off"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="@string/comfirmPass"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvErrorPassComfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#D51C1C"
+                    android:layout_marginStart="15dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/signupBtn"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_button"
+                android:text="@string/signup"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/farmstay_logo_notbackground" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/alreadyhaveanAccount"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/LogIntoaccount"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+.wrapper {
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.input {
+    flex: 1;
+    margin-right: 16px;
+}
+
+.button {
+    width: 60px;
+    border-radius: 24px;
+}

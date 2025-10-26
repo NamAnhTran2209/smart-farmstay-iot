@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720795664529",
+    "project_id": "linearlayouttest-10430",
+    "storage_bucket": "linearlayouttest-10430.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720795664529:android:0ae433b849506ad464ff30",
+        "android_client_info": {
+          "package_name": "com.example.login_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720795664529-moksiaj5dq2ddi7fea4sm8jqomhkcssp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWUfbN0_ROhga0k-OA33KnYjyqibOChek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720795664529-moksiaj5dq2ddi7fea4sm8jqomhkcssp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

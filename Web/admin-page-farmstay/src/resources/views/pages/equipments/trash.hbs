@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 col-sm-12 col-lg-6 text-primary p-0 d-flex align-items-center">
+            <h5 class=" mr-2">Danh sách thiết bị đã xóa</h5>
+            <a href="/equipment" class="btn btn-dark btn-sm">
+               <i class="fas fa-chevron-circle-left"></i>
+               <span>Quay lại danh sách</span> 
+            </a>
+            
+        </div>
+        <div class="col-lg-12 wrap-table p-3 mt-2">
+            <table id="tableDynamicVerticalScroll" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th class="th-sm">Action</th>
+                        <th class="th-sm">STT</th>
+                        <th class="th-sm">Tên</th>
+                        <th class="th-sm">Giá thuê</th>
+                        <th class="th-sm">Số lượng</th>
+                        <th class="th-sm">Đã thuê</th>
+                        <th class="th-sm">Loại thiết bị</th>
+                        <th class="th-sm">Thời gian xóa</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{#each equipments}}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex justify-content-center">
+                                            <span 
+                                                data-id="{{this.id}}",
+                                                class="btn btn-sm btn-primary restore-equipment mr-1">
+                                                <i class="fas fa-undo"></i>
+                                            </span>
+                                            
+                                            <span data-name="{{this.name}}" data-id="{{this.id}}" class="btn btn-sm btn-danger delete-force-equipment ml-1" data-toggle="modal" data-target="#modalDeleteForceEquipment">
+                                            <i class="fas fa-times-circle"></i></span>
+                                        </div>
+                                        
+                                        
+                                    </td>
+                                    
+                                    <td class="text-center">{{sum @index 1}}</td>
+                                    <td>{{this.name}}</td>
+                                    <td>{{this.rent_cost}}</td>
+                                    <td>{{this.quantity}}</td>
+                                    <td>{{this.total_used}}</td>
+                                    <td>{{this.belong_to_category.name}}</td>
+                                    <td>{{prettifyDate this.deletedAt}}</td>
+                                    
+                                </tr>
+                            {{/each}}
+                </tbody>
+                
+            </table>
+        </div>
+        
+        <form id="formRestoreEquipment" class="sr-only" action="/equipment/trash?_method=PUT" method="POST">
+            <input class="sr-only" id="inputIdRestoreEquipment" name="id" type="text">
+        </form>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalDeleteForceEquipment" tabindex="-1" role="dialog" aria-labelledby="modalDeleteForceEquipmentLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteForceEquipmentLabel">Thông báo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger modal-title-danger" role="alert">
+                            Bạn có muốn xóa <a class="alert-link"></a> vĩnh viễn không?
+                        </div>
+                        <form id="formDeleteForceEquipment" method="POST"></form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnDeleteForceEquipment"type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> js}}
+<script>
+    $(document).ready(function () {
+        var table = $('#tableDynamicVerticalScroll').DataTable({
+            "scrollY": "50vh",
+            "scrollCollapse": true,
+        });
+       
+    });
+</script>
+<script src="/js/equipment/trash.js">      
+</script>

@@ -1,0 +1,22 @@
+.wrapper {
+    width: 100%;
+    background: #fff;
+
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 8px;
+}
+
+.header {
+    width: 100%;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+}
+
+.body {
+    padding: 8px;
+}
+
+.outline {
+    border: 1px solid rgba(0, 0, 0, 0.151);
+}

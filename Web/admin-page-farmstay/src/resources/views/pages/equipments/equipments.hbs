@@ -1,0 +1,294 @@
+<link rel="stylesheet" href="/css/validate.css">
+<style>
+
+</style>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 col-sm-12 col-lg-4 text-primary text-center p-0 d-flex align-items-center">
+            <h5 class="mr-2">Danh sách thiết bị</h5>
+            <button type="button" class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#modalCreateEquipment">
+            <i class="fa fa-plus-circle"></i> Thêm thiết bị
+            </button>
+
+            <a href = "/equipment/trash" class="btn btn-dark btn-sm position-relative mr-2">
+                <i class="fas fa-trash"></i>
+                <p class="badge badge-warning position-absolute" style="top: -4px;right: -4px;">{{total_equipment_deleted}}</p>
+            </a>
+            
+        </div>
+        <div class="col-lg-12 wrap-table p-3 mt-2">
+            <table id="tableDynamicVerticalScroll" class="table table-striped table-bordered table-sm"
+  width="100%">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th class="th-sm">Action</th>
+                        <th class="th-sm">STT</th>
+                        <th class="th-sm">Tên</th>
+                        <th class="th-sm">Giá thuê</th>
+                        <th class="th-sm">Số lượng</th>
+                        <th class="th-sm">Đã thuê</th>
+                        <th class="th-sm">Loại thiết bị</th>
+                        <th class="th-sm">Thời gian cập nhật</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each equipments}}
+                        <tr>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <span
+                                    data-id="{{this.id}}",
+                                    data-name="{{this.name}}",
+                                    data-name-en="{{this.name_en}}",
+                                    data-rent-cost="{{this.rent_cost}}",
+                                    data-quantity="{{this.quantity}}",
+                                    data-category-name="{{this.belong_to_category.name}}",
+                                    data-category-id="{{this.belong_to_category.id}}",
+                                    class="btn btn-sm btn-primary edit-equipment mr-1">
+                                    <i class="fa fa-pencil-alt"></i>
+                                    </span>
+                                    <span data-name="{{this.name}}" data-id="{{this.id}}" class="btn btn-sm btn-warning delete-equipment ml-1" data-toggle="modal" data-target="#modalDeleteEquipment">
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                </div>
+                                
+                                
+                            </td>
+                            <td class="text-center">{{sum @index 1}}</td>
+                            <td><a href="/equipment/detail/{{this.id}}" class="text-info">{{this.name}}</a></td>
+                            <td class="money-vnd">{{this.rent_cost}}</td>
+                            <td >{{this.quantity}}</td>
+                            <td>{{this.total_used}}</td>
+                            <td>{{this.belong_to_category.name}}</td>
+                            <td>{{prettifyDate this.updatedAt}}</td>
+                            
+                        </tr>
+                    
+                    {{/each}}
+                    
+                </tbody>
+                
+            </table>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalCreateEquipment" tabindex="-1" role="dialog" aria-labelledby="modalCreateEquipmentTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCreateEquipmentTitle">Tạo thêm thiết bị</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formSubmitCreateEquipment" enctype="multipart/form-data" action="/equipment" method="POST">
+                        <div class="form-group">
+                            <label for="inputNameEquipment">Tên thiết bị</label>
+                            <input name="name" type="text" class="form-control" id="inputNameEquipment" placeholder="Nhập tên thiết bị">
+                            <span class="form-message"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNameEquipment">Tên tiếng anh</label>
+                            <input name="name_en" type="text" class="form-control" id="inputNameEnEquipment" placeholder="Nhập tên tiếng anh của thiết bị">
+                            <span class="form-message"></span>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="inputPriceEquipment">Giá thuê</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input name="rent_cost" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="inputPriceEquipment" placeholder="Nhập giá thuê">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">VNĐ</span>
+                                    </div>
+                                </div>
+                                <span class="form-message"></span>
+                                
+                                {{!-- <input name="rent_cost" type="text" class="form-control" id="inputPriceEquipment" placeholder="Nhập giá thuê"> --}}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputQuantityEquipment">Nhập số lượng</label>
+                                <input name="quantity" type="number" class="form-control" id="inputQuantityEquipment" min="0" value="0">
+                                <span class="form-message"></span>
+
+                            </div>
+                        </div> 
+                        
+                        <div class="form-group">
+                            <label for="inputImageEquipment">Tải ảnh</label>
+                            <div id='image-view' class="d-flex justify-content-center" >
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="addon-wrapping"><i class="fas fa-file-image"></i></span>
+                                </div>
+
+                                <input id = "inputImageEquipment" name="equipment_image" class="form-control" type="file" onchange="readURL(this);"  accept="image/*" aria-describedby="addon-wrapping"/>
+
+                                {{!-- <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping"> --}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTypeEquipment">Loại thiết bị</label>
+                            <select name="category_id" class="form-control" id="inputTypeEquipment">
+                            <option value="0">Không có</option>
+                            {{#each category}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                            {{/each}}
+                            </select>
+                            <span class="form-message"></span>
+
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="btnSubmitCreateEquipment" type="button" class="btn btn-primary">Tạo</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        {{!-- Modal update --}}
+        <div class="modal fade" id="modalEditEquipment" tabindex="-1" role="dialog" aria-labelledby="modalEditEquipmentTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditEquipmentTitle">Chỉnh sửa thiết bị</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formSubmitEditEquipment" action="/equipment?_method=PUT" method="POST">
+                        
+                        <div class="form-group">
+                            <input name="id" type="text" class="form-control sr-only" id="inputEditIdEquipment" >
+                            <label for="inputEditNameEquipment">Tên thiết bị</label>
+                            <input name="name" type="text" class="form-control" id="inputEditNameEquipment" placeholder="Nhập tên thiết bị">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNameEquipment">Tên tiếng anh</label>
+                            <input name="name_en" type="text" class="form-control" id="inputEditNameEnEquipment" placeholder="Nhập tên tiếng anh của thiết bị">
+                            <span class="form-message"></span>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputEditPriceEquipment">Giá thuê</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input name="rent_cost" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="inputEditPriceEquipment" placeholder="Nhập giá thuê">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">VNĐ</span>
+                                    </div>
+                                </div>
+                                <span class="form-message"></span>
+
+                                {{!-- <input name="rent_cost" type="text" class="form-control" id="inputPriceEquipment" placeholder="Nhập giá thuê"> --}}
+                            </div>
+                            {{!-- <div class="form-group col-md-4">
+                                <label for="inputQuantityEquipment">Nhập số lượng</label>
+                                <input name="quantity" type="number" class="form-control" id="inputEditQuantityEquipment" min="0" value="0">
+                            </div> --}}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTypeEquipment">Loại thiết bị</label>
+                            <select name="category_id" class="form-control" id="inputEditTypeEquipment">
+                            <option value="0">Không có</option>
+                            {{#each category}}
+                                <option value="{{this.id}}">{{this.name}}</option>
+                            {{/each}}
+                            </select>
+                        </div>
+                        
+                    </form>
+                    <div class="alert alert-success" role="alert">
+                    Chỉnh sửa số lượng và xem chi tiết ở đây <a href="#" class="alert-link">link</a>.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="btnSubmitEditEquipment" type="button" class="btn btn-primary">Lưu</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalDeleteEquipment" tabindex="-1" role="dialog" aria-labelledby="modalDeleteEquipmentLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDeleteEquipmentLabel">Bạn có muốn xóa?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning modal-title-warning" role="alert">
+                            Bạn có muốn xóa <a class="alert-link"></a> không?
+                        </div>
+                        <form id="formDeleteEquipment" method="POST"></form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnDeleteEquipment"type="button" class="btn btn-warning">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{> js}}
+<script src="/js/equipment/equipment.js">
+</script>
+
+<script>
+    Validator(
+    {
+        form: '#formSubmitCreateEquipment',
+        errorSelector: '.form-message',
+        formGroupSelector: '.form-group',
+        rules:[
+            Validator.isRequired('#inputNameEquipment'),
+            Validator.isRequired('#inputNameEnEquipment'),
+
+            Validator.isRequired('#inputPriceEquipment'),
+            Validator.isRequired('#inputQuantityEquipment'),
+        ],
+        
+    }
+    );
+    Validator(
+    {
+        form: '#formSubmitEditEquipment',
+        errorSelector: '.form-message',
+        formGroupSelector: '.form-group',
+        rules:[
+            Validator.isRequired('#inputEditNameEquipment'),
+            Validator.isRequired('#inputEditPriceEquipment'),
+            
+        ],
+        
+    }
+    );
+
+    $(document).ready(function () {
+        var table = $('#tableDynamicVerticalScroll').DataTable({
+            "scrollY": "50vh",
+             scrollX: true,
+            "scrollCollapse": true,
+        });
+       
+    });
+</script>

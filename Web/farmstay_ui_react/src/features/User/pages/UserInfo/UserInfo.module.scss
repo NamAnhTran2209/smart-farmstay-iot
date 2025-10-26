@@ -1,0 +1,77 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+.header-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background: #11998e no-repeat center center; /* fallback for old browsers */
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(152, 222, 91, 0.4), rgba(8, 225, 174, 0.4)),
+        url('~/src/assets/images/bg.jpg');
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backdrop-filter: blur(var(--blur));
+        -moz-backdrop-filter: blur(var(--blur));
+        -o-backdrop-filter: blur(var(--blur));
+        -ms-backdrop-filter: blur(var(--blur));
+        backdrop-filter: blur(var(--blur)); /* apply the blur */
+        pointer-events: none; /* make the overlay click-through */
+    }
+}
+
+.header-footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    bottom: 0;
+    background: #043300bb;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.user-avatar {
+    position: absolute;
+    top: 32%;
+    left: 10%;
+    transform: translate(-50%, -0%);
+    width: 160px;
+    height: 160px;
+}
+
+.username {
+    position: absolute;
+    left: 17%;
+    top: 78%;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.menu-list {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.2rem;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    &:hover {
+        cursor: pointer;
+        background-color: #6177633f;
+    }
+}

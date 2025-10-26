@@ -1,0 +1,38 @@
+.wrapper {
+    width: 100%;
+    margin-top: 24px;
+}
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.carousel {
+    position: relative;
+
+    width: 1150px;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.wrapper-content {
+    width: 100%;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+}
+.list-item-image {
+    height: 50px;
+    width: 50px;
+}
+.list-item-title {
+    flex: 1;
+}

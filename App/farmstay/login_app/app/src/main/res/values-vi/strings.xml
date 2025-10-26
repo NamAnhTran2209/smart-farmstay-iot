@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="change">THAY ĐỔI</string>
+    <string name="forgot">QUÊN</string>
+    <string name="password">MẬT KHẨU</string>
+
+    <string name="curentPass">mật khẩu hiện tại</string>
+    <string name="newPass">mật khẩu mới</string>
+    <string name="comfirmPass">nhập lại mật khẩu</string>
+
+    <string name="contactUs">Liên hệ</string>
+    <string name="phoneNumber">Số điện thoại</string>
+    <string name="emailAddress">Địa chỉ email</string>
+    <string name="askYourQuery">Câu hỏi</string>
+
+    <string name="home">Nhà</string>
+    <string name="notification">Thông báo</string>
+    <string name="account">Tài khoản</string>
+
+    <string name="emailOrusername">Tên người dùng/Email</string>
+    <string name="username">Tên người dùng</string>
+    <string name="gender">Giới tính</string>
+    <string name="address">Địa chỉ</string>
+    <string name="birthday">Ngày sinh</string>
+    <string name="save">Lưu</string>
+
+    <string name="forgotMessege">cung cấp địa chỉ email tài khoản của bạn nếu bạn muốn đặt lại mật khẩu của mình</string>
+    <string name="send">GỬI</string>
+
+    <string name="logIn">Đăng nhập</string>
+    <string name="signup">Đăng ký</string>
+    <string name="rememberMe">Lưu thông tin</string>
+    <string name="forgotPassword">Quên mật khẩu?</string>
+    <string name="createAnAccount">Tạo tài khoản</string>
+    <string name="password2">Mật khẩu</string>
+    <string name="alreadyhaveanAccount">Đã có tài khoản</string>
+    <string name="LogIntoaccount">Đăng nhập tài khoản</string>
+
+    <string name="passwordmustbe6characters">Mật khẩu phải từ 6 ký tự trở lên</string>
+    <string name="passwordnotmatch">Mật khẩu không khớp</string>
+    <string name="invalidEmail">Email không hợp lệ</string>
+
+    <string name="setting">Cài Đặt</string>
+    <string name="changePass">Thay đổi mật khẩu</string>
+    <string name="language1">Ngôn ngữ</string>
+
+    <string name="verification">XÁC THỰC</string>
+    <string name="code">MÃ</string>
+    <string name="verificationMessege">nhập mã xác minh đã được gửi đến email của bạn</string>
+    <string name="verifyCode">Xác thực</string>
+    <string name="reset">ĐẶT LẠI</string>
+    <string name="resetMessege">Mã đã được xác minh thành công Đặt mật khẩu mới của bạn</string>
+
+    <string name="user">( Người dùng )</string>
+    <string name="contact">Liên hệ</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="logout">Đăng xuất</string>
+
+    <string name="temperature">Nhiệt độ</string>
+    <string name="humidity">Độ ẩm</string>
+    <string name="soilMoisture">Độ ẩm đất</string>
+    <string name="soilIsNormal">độ ẩm đất ở mức bình thường</string>
+    <string name="lowSoil">độ ẩm đất ở mức thấp</string>
+    <string name="waterLevel">Mực nước</string>
+    <string name="waterIsNormal">mực nước ở mức bình thường</string>
+    <string name="lowWater">mực nước ở mức thấp</string>
+    <string name="highWater">mực nước ở mức cao</string>
+    <string name="value">Giá trị:</string>
+
+    <string name="home1">Khu nhà ở</string>
+    <string name="farm">Khu nông trại</string>
+
+    <string name="hi">Xin chào, </string>
+    <string name="welcomeToFarmstayACN">Chào mừng bạn đến Farmstay ACN</string>
+    <string name="introducing">Giới thiệu một số khu farmstay tại Farmstay ACN</string>
+
+    <string name="listofDevice">Danh sách thiết bị</string>
+    <string name="lamp1">Đèn 1</string>
+    <string name="lamp2">Đèn 2</string>
+    <string name="lamp3">Đèn 3</string>
+    <string name="lampOff">Tắt hết đèn</string>
+    <string name="lampOn">Mở hết đèn</string>
+    <string name="warning">CẢNH BÁO</string>
+
+    <string name="delete">Xóa</string>
+    <string name="warning2">Cảnh báo</string>
+    <string name="fireAlarm">cảnh báo cháy trong khu vực farmstay của bạn</string>
+
+    <string name="loginSuccessfully">Đăng nhập thành công</string>
+    <string name="wrongPassword">Sai mật khẩu</string>
+    <string name="accountDoesnotExist">Tài khoản không tồn tại</string>
+    <string name="passwordLenght">Mật khẩu phải từ 3 ký tự trở lên</string>
+    <string name="signupSuccessfully">Đăng ký thành công</string>
+    <string name="canNotCreateAccount">Không thể tạo tài khoản</string>
+
+    <string name="loginAgain">Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại</string>
+    <string name="sureLogout">Bạn có chắc chắn muốn đăng xuất?</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+    <string name="other">Khác</string>
+
+    <string name="change_avatar">Thay đổi ảnh</string>
+    <string name="choseImageLibary">Chọn ảnh từ thư viện</string>
+    <string name="choseCamera">Chụp ảnh</string>
+    <string name="cancel">Hủy</string>
+
+    <string name="youNotRentedFarmstay">bạn chưa thuê farmstay. vui lòng thuê ở khu vực trang chủ hoặc liên hệ trực tiếp với chúng tôi.</string>
+
+    <string name="website">trang web</string>
+    <string name="status">Trạng thái</string>
+    <string name="unverified">tài khoản chưa xác minh</string>
+    <string name="verified">tài khoản đã xác minh</string>
+    <string name="verify">Xác minh</string>
+    <string name="accountVerification">XÁC MINH TÀI KHOẢN</string>
+    <string name="changePassSuccess">Đổi mật khẩu thành công</string>
+    <string name="curentPassIncorect">Mật khẩu hiện tại không chính xác</string>
+    <string name="emailNotRegister">Email chưa đăng ký tài khoản</string>
+    <string name="codeSendSuccess">gửi mã thành công</string>
+    <string name="incorectOtpCode">mã otp không chính xác</string>
+    <string name="otpVerifySuccess">xác minh otp thành công</string>
+    <string name="resetPassSuccess">đặt lại mật khẩu thành công</string>
+    <string name="fan">Quạt</string>
+
+</resources>

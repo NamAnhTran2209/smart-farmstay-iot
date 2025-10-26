@@ -1,0 +1,23 @@
+.wrapper {
+    margin: 4px 16px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.wrapper-own {
+    justify-content: end;
+}
+
+.wrapper-content {
+    max-width: 80%;
+    display: inline-block;
+    border-radius: 16px;
+    background: #e2e2e2;
+    color: #333;
+    padding: 8px 16px;
+}
+
+.wrapper-content-own {
+    background: #2c80ff;
+    color: #fff;
+}
