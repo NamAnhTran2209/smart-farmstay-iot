@@ -119,19 +119,12 @@ Client (Android App / Web)
 - Đoàn Hoàng Ca  
 - Tăng Hồ Trung Nam  
 
-📧 Liên hệ: [nguyenvanduy@iuh.edu.vn](mailto:nguyenvanduy@iuh.edu.vn)
-
 ---
 
 ## 🏁 Kết luận
 
 Đề tài đã chứng minh tính khả thi trong việc ứng dụng **IoT và MQTT** vào lĩnh vực du lịch farmstay, giúp **tự động hóa quản lý, nâng cao trải nghiệm người dùng, và tối ưu chi phí vận hành**.  
 Trong tương lai, nhóm hướng đến việc mở rộng sang mô hình **smart resort** và **kết nối hệ thống AI phân tích dữ liệu cảm biến**.
-
----
-
-## 📄 Giấy phép
-Dự án được phát hành dưới **MIT License** — tự do sử dụng, học tập, và mở rộng.
 
 ---
 
