@@ -114,7 +114,6 @@ Client (Android App / Web)
 
 **Khoa Công nghệ Điện tử – Trường Đại học Công nghiệp TP.HCM (IUH)**  
 👨‍💻 **Nhóm sinh viên thực hiện:**
-- Nguyễn Văn Duy  
 - Trần Nam Anh  
 - Đoàn Hoàng Ca  
 - Tăng Hồ Trung Nam  
